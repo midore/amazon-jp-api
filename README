@@ -43,8 +43,8 @@ SelectOption [o/i/r/n]:
 
 # o + return => open the text file
 # r + retrun => remove a Object form list
-# r + return => show detail of Book Object or Music Object
-# n + return => cancel
+# i + return => show detail of Book Object or Music Object
+# n + return => cancel run option.
 
 $ ./run-amazon-api s ruby
 =>
