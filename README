@@ -1,0 +1,56 @@
+# 2009-08-05
+# midorex@gmail.com
+
+# About AmazonProduceAPI
+https://affiliate.amazon.co.jp/gp/associates/help/t126
+http://developer.amazonwebservices.com/connect/ann.jspa?annID=442
+
+# Dependency
+ ruby 1.9.1
+ ruby-openid-2.1.6
+ Your aws amazon key and aws amazon secret key and amazon id
+
+# Usage
+$ cd /your/path/AmazonAPI/
+# make directory
+$ mkdir data
+$ mkdir data/text
+# edit the path
+$ vim run-amazon-api.rb
+# line: /path/to/ruby-openid-2.1.6
+# edit config
+$ vim config
+# line: your amazon-id, amazon-key, amazon-secret-key
+
+# Add a Book Object or Muisc Object to the list
+$ ./run-amazon-api.rb add 9784873113944
+$ ./run-amazon-api.rb add 0724359095226
+
+# View the list
+$ ./run-amazon-api.rb l 3
+or
+$ ./run-amazon-api.rb l 10
+or
+$ ./run-amazon-api.rb l
+=>
+1	[0724359095226][Music][2009/08/05] Feels Like Home | Norah Jones
+2	[9784873113944][Book ][2009/08/05] プログラミング言語 Ruby | まつもと ゆきひろ / David Flanagan
+...
+Select
+# 1 + return
+SelectOption [o/i/r/n]:
+
+# o + return => open the text file
+# r + retrun => remove a Object form list
+# r + return => show detail of Book Object or Music Object
+# n + return => cancel
+
+$ ./run-amazon-api s ruby
+=>
+1	[9784873113944][Book ][2009/08/05] プログラミング言語 Ruby | まつもと ゆきひろ / David Flanagan
+SelectOption [o/i/r/n]:
+
+# License
+ You can redistribute it and/or modify it under the same terms as Ruby.  
+
+
