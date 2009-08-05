@@ -1,4 +1,6 @@
 #!/usr/local/bin/ruby
+# coding: utf-8
+#
 # run-amazon-api.rb
 # 2009-08-05
 
