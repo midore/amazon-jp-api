@@ -1,7 +1,6 @@
 #!/usr/local/bin/ruby
 # coding: utf-8
 # run-amazon-api.rb
-
 # 2009-08-05
 
 begin
@@ -20,7 +19,7 @@ require 'rexml/document'
 require 'uri'
 require 'net/http'
 
-# edit this line use AmazonAPI
+# edit this line 
 openid = '/path/to/ruby-openid-2.1.6/lib'
 $LOAD_PATH.push(openid)
 require 'openid'
