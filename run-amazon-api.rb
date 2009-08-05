@@ -1,5 +1,4 @@
-#!/Volumes/moon/mine/2009/ruby191/bin/ruby1.9
-
+#!/usr/local/bin/ruby
 # coding: utf-8
 # run-amazon-api.rb
 
