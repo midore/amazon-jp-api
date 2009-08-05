@@ -6,6 +6,9 @@
 https://affiliate.amazon.co.jp/gp/associates/help/t126
 http://developer.amazonwebservices.com/connect/ann.jspa?annID=442
 
+# Thanks
+http://github.com/tdtds/amazon-auth-proxy/
+
 # Dependency
  ruby 1.9.1
  ruby-openid-2.1.6
@@ -53,5 +56,4 @@ SelectOption [o/i/r/n]:
 
 # License
  You can redistribute it and/or modify it under the same terms as Ruby.  
-
 
