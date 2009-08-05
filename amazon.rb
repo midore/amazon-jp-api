@@ -1,6 +1,3 @@
-# coding: utf-8
-# amazon.rb
-
 module AmazonAPI
 
   ###############################
