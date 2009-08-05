@@ -1,0 +1,25 @@
+module AmazonAPI
+  module AmazonConfig
+
+    private
+
+    def jp_url
+      jp_url = 'http://webservices.amazon.co.jp'
+    end
+
+    def amazon_id
+      'your-amazon-id'
+    end
+
+    def amazon_key
+      'your-amazon-key'
+    end
+
+    def amazon_sec
+      'your-amazon-secret-key'
+    end
+
+  end
+end
+
+$MYCONF = AmazonAPI::AmazonConfig

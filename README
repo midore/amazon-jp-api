@@ -1,7 +1,8 @@
 # 2009-08-05
-# midorex@gmail.com
+# e-mail: midorex@gmail.com
+# URL: http://midorex.blogspot.com/
 
-# About AmazonProduceAPI
+# About AmazonProduceAPI in Japan
 https://affiliate.amazon.co.jp/gp/associates/help/t126
 http://developer.amazonwebservices.com/connect/ann.jspa?annID=442
 
@@ -11,7 +12,7 @@ http://developer.amazonwebservices.com/connect/ann.jspa?annID=442
  Your aws amazon key and aws amazon secret key and amazon id
 
 # Usage
-$ cd /your/path/AmazonAPI/
+$ cd /your/path/Amazon-jp-api/
 # make directory
 $ mkdir data
 $ mkdir data/text
