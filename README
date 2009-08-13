@@ -1,21 +1,27 @@
 # 2009-08-05
-# e-mail: midorex@gmail.com
+# E-mail: midorex@gmail.com
 # URL: http://midorex.blogspot.com/
 
-# About AmazonProduceAPI in Japan
-https://affiliate.amazon.co.jp/gp/associates/help/t126
-http://developer.amazonwebservices.com/connect/ann.jspa?annID=442
+# Product Advertising API
+ Product Advertising API（リンク作成用API、旧称:AmazonアソシエイトWebサービス）
+ https://affiliate.amazon.co.jp/gp/advertising/api/detail/main.html
+
+ Product Advertising API 開発者向けガイド リクエストの署名認証について（参考訳）
+ https://affiliate.amazon.co.jp/gp/associates/help/t126
+
+ Announcement: Amazon アソシエイト Web サービスの名称変更および署名認証についてのお知らせ
+ http://developer.amazonwebservices.com/connect/ann.jspa?annID=442
 
 # Thanks
-http://github.com/tdtds/amazon-auth-proxy/
+ http://github.com/tdtds/amazon-auth-proxy/
 
 # Dependency
  ruby 1.9.1
  ruby-openid-2.1.6
- Your aws amazon key and aws amazon secret key and amazon id
+ Your Access key and Secret key and Amazon id
 
 # Usage
-$ cd /your/path/Amazon-jp-api/
+$ cd /your/path/amazon-jp-api/
 # make directory
 $ mkdir data
 $ mkdir data/text
@@ -24,7 +30,7 @@ $ vim run-amazon-api.rb
 # line: /path/to/ruby-openid-2.1.6
 # edit config
 $ vim config
-# line: your amazon-id, amazon-key, amazon-secret-key
+# line: your amazon-key, amazon-secret-key, amazon-id
 
 # Add a Book Object or Muisc Object to the list
 $ ./run-amazon-api.rb add 9784873113944
@@ -36,7 +42,7 @@ or
 $ ./run-amazon-api.rb l 10
 or
 $ ./run-amazon-api.rb l
-=>
+#=>
 1	[0724359095226][Music][2009/08/05] Feels Like Home | Norah Jones
 2	[9784873113944][Book ][2009/08/05] プログラミング言語 Ruby | まつもと ゆきひろ / David Flanagan
 ...
@@ -49,11 +55,13 @@ SelectOption [o/i/r/n]:
 # i + return => show detail of Book Object or Music Object
 # n + return => cancel run option.
 
+# Search Object
 $ ./run-amazon-api s ruby
-=>
+#=>
 1	[9784873113944][Book ][2009/08/05] プログラミング言語 Ruby | まつもと ゆきひろ / David Flanagan
 SelectOption [o/i/r/n]:
 
 # License
  You can redistribute it and/or modify it under the same terms as Ruby.  
+
 
