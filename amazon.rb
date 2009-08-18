@@ -449,35 +449,6 @@ module AmazonAPI
   end
 
   ###############################
-  # StdinMessage
-  ###############################
-
-  class StdinMess
- 
-    def message(str, opt)
-      sec = 7
-      ans = ''
-      begin
-        timeout(sec){ans = interactive(str, opt)}
-      rescue RuntimeError
-      return print "Timeout. #{sec}sec...bye\n"
-      rescue SignalException
-      return print "\n"
-      end
-      return ans
-    end
-  
-    def interactive(mess, opt)
-      return false unless $stdin.tty?
-      print "#{mess}:\n"
-      ans = $stdin.gets.chop
-      return false if /^n$|^no$/.match(ans)
-      return false if ans.empty?
-    end 
-
-  end
-
-  ###############################
   # BaseMessage
   ###############################
 
