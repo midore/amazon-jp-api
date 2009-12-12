@@ -378,9 +378,10 @@ module AmazonAPI
 
     def initialize(xml, aws_id=nil)
       if xml
-        ustr = xml.force_encoding("UTF-8")
-        unless ustr.include?("Error")
-          @xml = REXML::Document.new(ustr)
+        # reference: http://yugui.jp/articles/850
+        #ustr = xml.force_encoding("UTF-8")
+        unless xml.include?("Error")
+          @xml = REXML::Document.new(xml)
         else
           print "ErrorXML \n"
         end
