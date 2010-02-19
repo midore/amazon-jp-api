@@ -379,7 +379,7 @@ module AmazonAPI
     def initialize(xml, aws_id=nil)
       if xml
         # reference: http://yugui.jp/articles/850
-        #ustr = xml.force_encoding("UTF-8")
+        # ustr = xml.force_encoding("UTF-8")
         unless xml.include?("Error")
           @xml = REXML::Document.new(xml)
         else
@@ -435,16 +435,16 @@ module AmazonAPI
 
     def seturl
       url = exurl(@url.text)
-      eurl = url.gsub(/\?SubscriptionId=.*/u,'')
-      m = /amazon.co.jp\/(.*?\/)/u.match(eurl)
+      eurl = url.gsub(/\?SubscriptionId=.*/,'')
+      m = /amazon.co.jp\/(.*?\/)/.match(eurl)
       v = eurl.gsub(m[1], '')
       v << "?tag=#{@aws_id}" if @aws_id
       @h["DetailPageURL"] = v
     end
 
     def exurl(string)
-      enc = string.encoding
-      string.gsub(/%([0-9a-fA-F]{2})/){[$1.delete('%')].pack("H*")}.force_encoding(enc)
+      str = string.gsub(/%([0-9a-fA-F]{2})/){[$1.delete('%')].pack("H*")}
+      return str if str.valid_encoding?
     end
 
   end
