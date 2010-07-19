@@ -434,12 +434,8 @@ module AmazonAPI
     end
 
     def seturl
-      url = exurl(@url.text)
-      eurl = url.gsub(/\?SubscriptionId=.*/,'')
-      m = /amazon.co.jp\/(.*?\/)/.match(eurl)
-      v = eurl.gsub(m[1], '')
-      v << "?tag=#{@aws_id}" if @aws_id
-      @h["DetailPageURL"] = v
+      u = exurl(@url.text)
+      u + "?tag=#{@aws_id}"
     end
 
     def exurl(string)
