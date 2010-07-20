@@ -43,7 +43,7 @@ module AmazonAPI
   ###############################
 
   class AwsItem
- 
+
     def initialize(h)
       @h = h
       @created = nil
@@ -59,7 +59,7 @@ module AmazonAPI
       # if given amazon hash data
       set_up if @h
     end
-    
+
     attr_reader :ean, :title, :h
 
     def to_s
@@ -98,7 +98,7 @@ module AmazonAPI
       i = "@#{x}".downcase.to_sym
       self.instance_variable_set(i, v) if i_defined?(i)
     end
-    
+
     def i_defined?(i)
       self.instance_variable_defined?(i)
     end
@@ -128,7 +128,6 @@ module AmazonAPI
       list_save
       item_save
     end
-    
     # print list
     def view(num=nil)
       num = 5 unless num
@@ -137,7 +136,6 @@ module AmazonAPI
       @list.values.sort_by{|v| v[:created].to_s}.reverse[0..num.to_i].each{|v| @ary << AwsItem.new(v).set_up}
       item_view
     end
-
     # search keyword in title or artist, author, lavel, publisher, etc...
     def lookup(w)
       @ary = Array.new
@@ -146,7 +144,6 @@ module AmazonAPI
       return puts "not found\n" if @ary.empty?
       item_view
     end
-    
     # print all isbn
     def view_isbnlist
       @list.keys.each{|k| print "#{k}\n"}
@@ -199,7 +196,7 @@ module AmazonAPI
       @item = choose_item
       choose_option if @item
     end
-    
+
     def item_delete
       @list.delete(@item.ean)
       m_writer(db_path, @list)
@@ -238,7 +235,7 @@ module AmazonAPI
     def dir_current
       File.dirname(File.expand_path($PROGRAM_NAME))
     end
-    
+
     def dir_text
       File.join(dir_current, 'data', 'text')
     end
@@ -264,7 +261,7 @@ module AmazonAPI
       ipad = IPAD.each_byte.to_a
       opad = OPAD.each_byte.to_a
       akey = key.each_byte.to_a
-      
+
       ikey = ipad
       okey = opad
       key.size.times{|i|
@@ -301,7 +298,7 @@ module AmazonAPI
     end
 
     private
-    
+
     def ean_check
       return nil if @ean.size < 9 or @ean.size > 13
       return nil if m = /\D/.match(@ean)
@@ -434,13 +431,10 @@ module AmazonAPI
     end
 
     def seturl
-      u = exurl(@url.text)
-      u + "?tag=#{@aws_id}"
-    end
-
-    def exurl(string)
-      str = string.gsub(/%([0-9a-fA-F]{2})/){[$1.delete('%')].pack("H*")}
-      return str if str.valid_encoding?
+      return nil unless @url
+      return nil unless @aws_id
+      url = @url.txt + "?tag=#{@aws_id}"
+      return url
     end
 
   end
@@ -492,5 +486,4 @@ module AmazonAPI
 
 # end of module AmazonAPI
 end
-
 
