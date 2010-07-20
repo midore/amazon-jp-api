@@ -433,7 +433,7 @@ module AmazonAPI
     def seturl
       return nil unless @url
       return nil unless @aws_id
-      url = @url.txt + "?tag=#{@aws_id}"
+      url = @url.text + "0%3Ftag%3D#{@aws_id}"
       return url
     end
 
